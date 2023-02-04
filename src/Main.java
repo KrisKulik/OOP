@@ -1,3 +1,4 @@
+import transport.Car;
 public class Main {
     /* Создайте объекты для следующих автомобилей:
     Lada Granta, 2015 год выпуска, сборка в России, желтого цвета, объем двигателя — 1,7 л.
@@ -7,16 +8,16 @@ public class Main {
     Hyundai Avante, сборка в Южной Корее, цвет кузова — оранжевый, объем двигателя — 1,6 л, год выпуска — 2016 год. */
     public static void main(String[] args) {
 
-        Car lada = new Car("Lada", "Granta", 1.7, "yellow", 2015, "Russia");
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, "black", 2020, "Germany");
-        Car bmw = new Car("BMW", "Z8", 3.0, "black", 2021, "Germany");
-        Car kia = new Car("Kia", "Sportage IV", 2.4, "red", 2018, "South Korea");
-        Car hyundai = new Car("Hyundai", "Avante", 1.6, "orange", 2016, "South Korea");
-        System.out.println(lada.getBrand() + " " + lada.getModel() + " " +  lada.getEngineVolume() + " " +  lada.getColor() + " " +  lada.getYear() + " " +  lada.getCountry());
-        System.out.println(audi.getBrand() + " " + audi.getModel() + " " +  audi.getEngineVolume() + " " +  audi.getColor() + " " +  audi.getYear() + " " +  audi.getCountry());
-        System.out.println(bmw.getBrand() + " " + bmw.getModel() + " " +  bmw.getEngineVolume() + " " +  bmw.getColor() + " " +  bmw.getYear() + " " +  bmw.getCountry());
-        System.out.println(kia.getBrand() + " " + kia.getModel() + " " +  kia.getEngineVolume() + " " +  kia.getColor() + " " +  kia.getYear() + " " + kia.getCountry());
-        System.out.println(hyundai.getBrand() + " " + hyundai.getModel() + " " +  hyundai.getEngineVolume() + " " +  hyundai.getColor() + " " +  hyundai.getYear() + " " +  hyundai.getCountry());
+        Car lada = new Car("Lada", "Granta", 1.7, "yellow", 2015, "Russia", "MT", "sedan", "A111AA", 5, false);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, "black", 2020, "Germany", "AT", "sedan", "B222BB", 4, true);
+        Car bmw = new Car("BMW", "Z8", 3.0, "black", 2021, "Germany", "MT", "roadster", "C333CC", 2, true);
+        Car kia = new Car("Kia", "Sportage IV", 2.4, "red", 2018, "South Korea", "AT", "SUV", "E444EE", 5, false);
+        Car hyundai = new Car("Hyundai", "Avante", 1.6, "orange", 2016, "South Korea", "MTA", "sedan", "H555HH", 5, true);
+        System.out.println(lada);
+        System.out.println(audi);
+        System.out.println(bmw);
+        System.out.println(kia);
+        System.out.println(hyundai);
     }
 }
 

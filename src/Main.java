@@ -18,6 +18,9 @@ public class Main {
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
+
+        hyundai.changeTiresToSeason(2);
+        System.out.println(hyundai);
     }
 }
 

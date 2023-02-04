@@ -1,5 +1,7 @@
 package transport;
 
+import java.time.LocalDate;
+
 // Нужно добавить классу Car следующие свойства:
 //        «Коробка передач»,
 //        «Тип кузова»,
@@ -20,21 +22,12 @@ public class Car {
     private String color;
     private final int year;
     private final String country;
+
     private String transmission;
-    private String carBody;
+    private final String carBody;
     private String registrationNumber;
-    private int seats;
+    private final int seats;
     private boolean isSummerTires;
-
-    public Car(String brand, String model, double engineVolume, String color, int year, String country) {
-        this.brand = (brand == null || brand.isEmpty() ? "default" : brand);
-        this.model = (model == null || model.isEmpty() ? "default" : model);
-        this.engineVolume = (engineVolume <= 0 ? 1.5 : engineVolume);
-        this.color = (color == null || color.isEmpty() ? "White" : color);
-        this.year = (year < 0 ? 2000 : year);
-        this.country = (country == null || country.isEmpty() ? "default" : country);
-    }
-
     // Пропишите проверку данных для новых полей класса, а также значения по умолчанию,
 // если параметры пустые, равны null или имеют некорректное значение.
     public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String carBody, String registrationNumber, int seats, boolean isSummerTires) {
@@ -47,8 +40,8 @@ public class Car {
         this.transmission = (transmission == null || transmission.isEmpty() ? "default" : transmission);
         this.carBody = (carBody == null || carBody.isEmpty() ? "default" : carBody);
         this.registrationNumber = (registrationNumber == null || registrationNumber.isEmpty() ? "default" : registrationNumber);
-        this.seats = (seats <= 0 ? 5 : seats);
-        this.isSummerTires = true;
+        this.seats = ((seats <= 0) ? 5 : seats);
+        this.isSummerTires = isSummerTires;
     }
 
     //    Добавьте функциональность: метод «сменить шины на сезонные».
@@ -89,16 +82,8 @@ public class Car {
         return engineVolume;
     }
 
-    public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
-    }
-
     public String getColor() {
         return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public int getYear() {
@@ -113,10 +98,6 @@ public class Car {
         return transmission;
     }
 
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
-    }
-
     public String getCarBody() {
         return carBody;
     }
@@ -125,21 +106,13 @@ public class Car {
         return registrationNumber;
     }
 
-    public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
-    }
-
-    public int getSeats() {
+     public int getSeats() {
         return seats;
     }
 
 
     public boolean isSummerTires() {
         return isSummerTires;
-    }
-
-    public void setSummerTires(boolean summerTires) {
-        this.isSummerTires = isSummerTires;
     }
 
     @Override
@@ -154,6 +127,6 @@ public class Car {
                 "Тип кузова: " + carBody + "; " +
                 "Регистрационный номер: " + registrationNumber + "; " +
                 "Количество мест: " + seats + "; " +
-                "Резина: " + isSummerTires;
+                (isSummerTires ? "Летняя" : "Зимняя") + " резина";
     }
 }

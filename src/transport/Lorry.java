@@ -1,7 +1,7 @@
 package transport;
 
-public class Bus extends Transport<DriverCategoryD> {
-    public Bus(String brand, String model, double engineVolume, DriverCategoryD driver) {
+public class Lorry extends Transport<DriverCategoryC> {
+    public Lorry(String brand, String model, double engineVolume, DriverCategoryC driver) {
         super(brand, model, engineVolume, driver);
     }
 

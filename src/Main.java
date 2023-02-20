@@ -6,47 +6,52 @@ public class Main {
                 DriverCategoryC driverC = new DriverCategoryC("Donald Fauntleroy Duck", true, 10);
                 DriverCategoryD driverD = new DriverCategoryD("Pluto", true, 1);
 
-                Car car1 = new Car("ВАЗ", "2101", 1.6, driverB);
-                Car car2 = new Car("ВАЗ", "2102", 1.6, driverB);
-                Car car3 = new Car("ВАЗ", "2103", 1.6, driverB);
-                Car car4 = new Car("ВАЗ", "2104", 1.6, driverB);
+                Car car1 = new Car("ВАЗ", "2101", 1.6, driverB, BodyCar.SEDAN);
+                Car car2 = new Car("ВАЗ", "2102", 1.6, driverB, BodyCar.HATCHBACK);
+                Car car3 = new Car("ВАЗ", "2103", 1.6, driverB, BodyCar.SEDAN);
+                Car car4 = new Car("ВАЗ", "2104", 1.6, driverB, BodyCar.HATCHBACK);
 
-                Bus bus1 = new Bus("ПАЗ", "3201", 4.0, driverD);
-                Bus bus2 = new Bus("ПАЗ", "3202", 4.0, driverD);
-                Bus bus3 = new Bus("ПАЗ", "3203", 4.0, driverD);
-                Bus bus4 = new Bus("ПАЗ", "3204", 4.0, driverD);
+                Bus bus1 = new Bus("ПАЗ", "3201", 4.0, driverD, Capacity.SMALL);
+                Bus bus2 = new Bus("ПАЗ", "3202", 4.0, driverD, Capacity.SMALL);
+                Bus bus3 = new Bus("ПАЗ", "3203", 4.0, driverD, Capacity.MEDIUM);
+                Bus bus4 = new Bus("ПАЗ", "3204", 4.0, driverD, Capacity.MEDIUM);
 
-                Lorry lorry1 = new Lorry("КамАЗ", "4308", 5.9, driverC);
-                Lorry lorry2 = new Lorry("КамАЗ", "4310", 5.9, driverC);
-                Lorry lorry3 = new Lorry("КамАЗ", "4325", 5.9, driverC);
-                Lorry lorry4 = new Lorry("КамАЗ", "4350", 5.9, driverC);
+                Lorry lorry1 = new Lorry("КамАЗ", "4308", 5.9, driverC, LoadCapacity.N2);
+                Lorry lorry2 = new Lorry("КамАЗ", "4310", 5.9, driverC, LoadCapacity.N2);
+                Lorry lorry3 = new Lorry("КамАЗ", "4325", 5.9, driverC, LoadCapacity.N2);
+                Lorry lorry4 = new Lorry("КамАЗ", "4350", 5.9, driverC, LoadCapacity.N2);
                 System.out.println(car1);
-                System.out.println(bus2);
-                System.out.println(lorry3);
+                System.out.println(bus1);
+                System.out.println(lorry1);
+                car2.printType();
+                lorry1.printType();
+                bus3.printType();
 
-                car1.start();
-                car1.finish();
 
-                System.out.println(" ");
 
-                car4.pitStop();
-                car2.maxSpeed();
-                car3.bestTime();
-
-                System.out.println(" ");
-
-                bus1.pitStop();
-                bus2.bestTime();
-                bus3.maxSpeed();
-
-                System.out.println(" ");
-
-                lorry4.pitStop();
-                lorry2.bestTime();
-                lorry1.maxSpeed();
-                System.out.println(" ");
-
-                System.out.println("Водитель " + driverB.getName() + " управляет транспортом " + car1.getBrand() + " " + car1.getModel() + " и будет участвовать в заезде");
+//                car1.start();
+//                car1.finish();
+//
+//                System.out.println(" ");
+//
+//                car4.pitStop();
+//                car2.maxSpeed();
+//                car3.bestTime();
+//
+//                System.out.println(" ");
+//
+//                bus1.pitStop();
+//                bus2.bestTime();
+//                bus3.maxSpeed();
+//
+//                System.out.println(" ");
+//
+//                lorry4.pitStop();
+//                lorry2.bestTime();
+//                lorry1.maxSpeed();
+//                System.out.println(" ");
+//
+//                System.out.println("Водитель " + driverB.getName() + " управляет транспортом " + car1.getBrand() + " " + car1.getModel() + " и будет участвовать в заезде");
 
 
 

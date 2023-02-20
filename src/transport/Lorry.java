@@ -18,13 +18,12 @@ public class Lorry extends Transport<DriverCategoryC> {
     }
 
     @Override
-    public Type printType() {
+    public void printType() {
         if (getLoadCapacity() == null) {
             System.out.println("Данных по транспортному средству недостаточно");
         } else {
             System.out.println(getLoadCapacity());
         }
-        return null;
     }
 
     @Override

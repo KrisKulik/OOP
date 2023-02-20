@@ -25,6 +25,7 @@ public abstract class Transport <T extends Driver> implements Competing {
          this.engineVolume = (engineVolume == 0 ? 1.0 : engineVolume);
          setDriver(driver);
      }
+
     public void start(){
 }
     public void finish() {
@@ -48,7 +49,10 @@ public abstract class Transport <T extends Driver> implements Competing {
         this.driver = driver;
     }
     public abstract Type getType();
-    public abstract Type printType();
+
+    public void printType() {
+    }
+
     @Override
     public String toString() {
         return "Марка: " + brand + "; " +

@@ -34,16 +34,13 @@ public class Car extends Transport<DriverCategoryB> {
     }
 
     @Override
-    public Type printType() {
+    public void printType() {
         if (getBodyCar() == null) {
             System.out.println("Данных по транспортному средству недостаточно");
         } else {
             System.out.println(getBodyCar());
         }
-        return null;
     }
-
-
 
     @Override
     public String toString() {

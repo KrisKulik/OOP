@@ -23,9 +23,7 @@ public class Main {
                 System.out.println(car1);
                 System.out.println(bus1);
                 System.out.println(lorry1);
-                car2.printType();
-                lorry1.printType();
-                bus3.printType();
+                car1.printType();
 
 
 

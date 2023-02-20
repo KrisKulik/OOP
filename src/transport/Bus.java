@@ -24,15 +24,13 @@ public class Bus extends Transport<DriverCategoryD> {
     }
 
     @Override
-    public Type printType() {
+    public void printType() {
         if (getCapacity() == null) {
             System.out.println("Данных по транспортному средству недостаточно");
         } else {
             System.out.println(getCapacity());
         }
-        return null;
     }
-
 
     @Override
     public String toString() {

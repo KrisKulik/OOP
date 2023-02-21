@@ -1,7 +1,5 @@
 package transport;
 
-import java.time.LocalDate;
-
 //Теперь добавьте для каждой категории в этой модели перечисления. Для каждого перечисления нужно определить аргументы и метод
 //toString для вывода данных аргументов.
 //Для класса «Легковые автомобили» добавьте в качестве списка следующие типы кузова:
@@ -31,6 +29,11 @@ public class Car extends Transport<DriverCategoryB> {
 
     public void setBodyCar(BodyCar bodyCar) {
         this.bodyCar = bodyCar;
+    }
+
+    @Override
+    public boolean passDiagnostic() throws TransportTypeException {
+        return true;
     }
 
     @Override

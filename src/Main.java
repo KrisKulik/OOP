@@ -1,7 +1,7 @@
 import transport.*;
 
 public class Main {
-        public static void main(String[] args) {
+        public static void main(String[] args) throws TransportTypeException {
                 DriverCategoryB driverB = new DriverCategoryB("Mickey Mouse", true, 5);
                 DriverCategoryC driverC = new DriverCategoryC("Donald Fauntleroy Duck", true, 10);
                 DriverCategoryD driverD = new DriverCategoryD("Pluto", true, 1);
@@ -10,6 +10,7 @@ public class Main {
                 Car car2 = new Car("ВАЗ", "2102", 1.6, driverB, BodyCar.HATCHBACK);
                 Car car3 = new Car("ВАЗ", "2103", 1.6, driverB, BodyCar.SEDAN);
                 Car car4 = new Car("ВАЗ", "2104", 1.6, driverB, BodyCar.HATCHBACK);
+
 
                 Bus bus1 = new Bus("ПАЗ", "3201", 4.0, driverD, Capacity.SMALL);
                 Bus bus2 = new Bus("ПАЗ", "3202", 4.0, driverD, Capacity.SMALL);
@@ -25,6 +26,14 @@ public class Main {
                 System.out.println(lorry1);
                 car1.printType();
 
+                System.out.println(car1.passDiagnostic());
+                System.out.println(lorry2.passDiagnostic());
+
+                try {bus3.passDiagnostic();
+                } catch (TransportTypeException e) {
+                        System.out.println(e.getMessage());
+                }
+                }
 
 
 //                car1.start();
@@ -76,5 +85,5 @@ public class Main {
 //                System.out.println(paz);
 //                System.out.println(nefaz);
    }
-}
+
 

@@ -6,7 +6,7 @@ public abstract class Transport <T extends Driver> implements Competing {
     private double engineVolume;
     private T driver;
 
-//    private final int year;
+    //    private final int year;
 //    private final String country;
 //    private String color;
 //    private int maxSpeed;
@@ -25,6 +25,7 @@ public abstract class Transport <T extends Driver> implements Competing {
          this.engineVolume = (engineVolume == 0 ? 1.0 : engineVolume);
          setDriver(driver);
      }
+
     public void start(){
 }
     public void finish() {
@@ -47,14 +48,19 @@ public abstract class Transport <T extends Driver> implements Competing {
     public void setDriver(T driver) {
         this.driver = driver;
     }
+    public abstract Type getType();
+
+    public void printType() {
+    }
 
     @Override
     public String toString() {
-        return
-                "Марка: " + brand + "; " +
-                "Модель:" + model + "; " +
-                "Объем двигателя: " + engineVolume;
+        return "Марка: " + brand + "; " +
+                "Модель: " + model + "; " +
+                "Объем двигателя: " + engineVolume + "; " +
+                 driver;
     }
+
 //
 //    public int getYear() {
 //        return year;

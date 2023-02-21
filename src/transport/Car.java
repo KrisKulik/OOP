@@ -2,38 +2,74 @@ package transport;
 
 import java.time.LocalDate;
 
+//Теперь добавьте для каждой категории в этой модели перечисления. Для каждого перечисления нужно определить аргументы и метод
+//toString для вывода данных аргументов.
+//Для класса «Легковые автомобили» добавьте в качестве списка следующие типы кузова:
+//«Седан»,
+//«Хетчбэк»,
+//«Купе»,
+//«Универсал»,
+//«Внедорожник»,
+//«Кроссовер»,
+//«Пикап»,
+//«Фургон»,
+//«Минивэн».
+
 public class Car extends Transport<DriverCategoryB> {
-    public Car(String brand, String model, double engineVolume, DriverCategoryB driver) {
+
+    private BodyCar bodyCar;
+
+
+    public Car(String brand, String model, double engineVolume, DriverCategoryB driver, BodyCar bodyCar) {
         super(brand, model, engineVolume, driver);
+        this.bodyCar = bodyCar;
+    }
+
+    public BodyCar getBodyCar() {
+        return bodyCar;
+    }
+
+    public void setBodyCar(BodyCar bodyCar) {
+        this.bodyCar = bodyCar;
     }
 
     @Override
-    public void start() {
-        System.out.println(getBrand() + " " + getModel() + " начал движение");
+    public void printType() {
+        if (getBodyCar() == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getBodyCar());
+        }
     }
 
     @Override
-    public void finish() {
-        System.out.println(getBrand() + " " + getModel() + " закончил движение");
+    public String toString() {
+        return super.toString() + "; " +
+                "Тип кузова: " + bodyCar;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.CAR;
     }
 
     @Override
     public void pitStop() {
         System.out.println(getBrand() + " " + getModel() + " остановился на пит-стоп");
-
     }
 
     @Override
     public void bestTime() {
         System.out.println("Лучшее время - " + getBrand() + " " + getModel());
-
     }
 
     @Override
     public void maxSpeed() {
         System.out.println("Максимальная скорость - " + getBrand() + " " + getModel());
-
     }
+}
+
+
 //    private double engineVolume;
 //    private String transmission;
 //    private final String carBody;
@@ -106,4 +142,4 @@ public class Car extends Transport<DriverCategoryB> {
 //                "Количество мест: " + seats + "; " +
 //                (isSummerTires ? "Летняя" : "Зимняя") + " резина";
 //    }
-}
+

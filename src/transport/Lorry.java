@@ -1,8 +1,34 @@
 package transport;
-
+//Для грузовых автомобилей добавьте перечисления по типу грузоподъемности:
+//N1 (с полной массой до 3,5 тонн);
+//N2 (с полной массой свыше 3,5 до 12 тонн);
+//N3 (с полной массой свыше 12 тонн).
 public class Lorry extends Transport<DriverCategoryC> {
-    public Lorry(String brand, String model, double engineVolume, DriverCategoryC driver) {
+    private LoadCapacity loadCapacity;
+    public Lorry(String brand, String model, double engineVolume, DriverCategoryC driver, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume, driver);
+        this.loadCapacity=loadCapacity;
+    }
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    @Override
+    public void printType() {
+        if (getLoadCapacity() == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getLoadCapacity());
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "; " + loadCapacity;
     }
 
     @Override
@@ -13,6 +39,11 @@ public class Lorry extends Transport<DriverCategoryC> {
     @Override
     public void finish() {
         System.out.println(getBrand() + " " + getModel() + " закончил движение");
+    }
+
+    @Override
+    public Type getType() {
+        return Type.LORRY;
     }
 
     @Override

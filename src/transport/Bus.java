@@ -1,8 +1,40 @@
 package transport;
+//А для автобусов добавьте классификацию с помощью перечислений по типу вместимости:
+//особо малая (до 10 мест);
+//малая (до 25);
+//средняя (25–50);
+//большая (50–80);
+//особо большая (80–120 мест).
 
 public class Bus extends Transport<DriverCategoryD> {
-    public Bus(String brand, String model, double engineVolume, DriverCategoryD driver) {
+
+    private Capacity capacity;
+
+    public Bus(String brand, String model, double engineVolume, DriverCategoryD driver, Capacity capacity) {
         super(brand, model, engineVolume, driver);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public void printType() {
+        if (getCapacity() == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getCapacity());
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "; " + capacity;
     }
 
     @Override
@@ -14,6 +46,12 @@ public class Bus extends Transport<DriverCategoryD> {
     public void finish() {
         System.out.println(getBrand() + " " + getModel() + " закончил движение");
     }
+
+    @Override
+    public Type getType() {
+        return Type.BUS;
+    }
+
 
     @Override
     public void pitStop() {
@@ -30,3 +68,5 @@ public class Bus extends Transport<DriverCategoryD> {
         System.out.println("Максимальная скорость - " + getBrand() + " " + getModel());
     }
 }
+
+

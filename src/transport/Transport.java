@@ -19,7 +19,7 @@ public abstract class Transport <T extends Driver> implements Competing {
 //        this.color = (color == null || color.isEmpty() ? "White" : color);
 //        this.maxSpeed = (maxSpeed <= 0 ? 111 : maxSpeed);
 //    }
-     public Transport(String brand, String model, double engineVolume, T driver) {
+     public Transport (String brand, String model, double engineVolume, T driver) {
          this.brand = (brand == null || brand.isEmpty() ? "default" : brand);
          this.model = (model == null || model.isEmpty() ? "default" : model);
          this.engineVolume = (engineVolume == 0 ? 1.0 : engineVolume);
@@ -42,16 +42,21 @@ public abstract class Transport <T extends Driver> implements Competing {
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
     }
+
     public T getDriver() {
         return driver;
     }
     public void setDriver(T driver) {
         this.driver = driver;
     }
+
     public abstract Type getType();
 
     public void printType() {
     }
+
+    abstract boolean passDiagnostic() throws TransportTypeException;
+
 
     @Override
     public String toString() {
@@ -60,6 +65,7 @@ public abstract class Transport <T extends Driver> implements Competing {
                 "Объем двигателя: " + engineVolume + "; " +
                  driver;
     }
+}
 
 //
 //    public int getYear() {
@@ -98,4 +104,4 @@ public abstract class Transport <T extends Driver> implements Competing {
 //                "Цвет: " + color + "; " +
 //                "Максимальная скорость передвижения: " + maxSpeed + "; ";
 //    }
-}
+

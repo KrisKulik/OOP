@@ -24,6 +24,11 @@ public class Bus extends Transport<DriverCategoryD> {
     }
 
     @Override
+    public boolean passDiagnostic() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
+    }
+
+    @Override
     public void printType() {
         if (getCapacity() == null) {
             System.out.println("Данных по транспортному средству недостаточно");
@@ -31,6 +36,7 @@ public class Bus extends Transport<DriverCategoryD> {
             System.out.println(getCapacity());
         }
     }
+
 
     @Override
     public String toString() {

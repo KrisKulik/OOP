@@ -26,6 +26,12 @@ public class Lorry extends Transport<DriverCategoryC> {
         }
     }
 
+
+    @Override
+    public boolean passDiagnostic() throws TransportTypeException {
+        return true;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "; " + loadCapacity;

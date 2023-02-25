@@ -1,10 +1,15 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private T driver;
+    private List<Mechanics> mechanic;
 
     //    private final int year;
 //    private final String country;
@@ -19,11 +24,12 @@ public abstract class Transport <T extends Driver> implements Competing {
 //        this.color = (color == null || color.isEmpty() ? "White" : color);
 //        this.maxSpeed = (maxSpeed <= 0 ? 111 : maxSpeed);
 //    }
-     public Transport (String brand, String model, double engineVolume, T driver) {
+     public Transport (String brand, String model, double engineVolume, T driver, List<Mechanics>mechanic) {
          this.brand = (brand == null || brand.isEmpty() ? "default" : brand);
          this.model = (model == null || model.isEmpty() ? "default" : model);
          this.engineVolume = (engineVolume == 0 ? 1.0 : engineVolume);
          setDriver(driver);
+         this.mechanic = mechanic;
      }
 
     public void start(){
@@ -50,6 +56,7 @@ public abstract class Transport <T extends Driver> implements Competing {
         this.driver = driver;
     }
 
+
     public abstract Type getType();
 
     public void printType() {
@@ -58,12 +65,12 @@ public abstract class Transport <T extends Driver> implements Competing {
     abstract boolean passDiagnostic() throws TransportTypeException;
 
 
-    @Override
-    public String toString() {
-        return "Марка: " + brand + "; " +
-                "Модель: " + model + "; " +
-                "Объем двигателя: " + engineVolume + "; " +
-                 driver;
+    public List<Mechanics> getMechanic() {
+        return mechanic;
+    }
+
+    public void setMechanic(List<Mechanics> mechanic) {
+        this.mechanic = mechanic;
     }
 }
 

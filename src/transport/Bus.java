@@ -6,13 +6,17 @@ package transport;
 //большая (50–80);
 //особо большая (80–120 мест).
 
-public class Bus extends Transport<DriverCategoryD> {
+import java.util.Collection;
+import java.util.List;
+
+public class Bus extends Transport<DriverCategoryD>{
 
     private Capacity capacity;
 
-    public Bus(String brand, String model, double engineVolume, DriverCategoryD driver, Capacity capacity) {
-        super(brand, model, engineVolume, driver);
+    public Bus(String brand, String model, double engineVolume, DriverCategoryD driver, Capacity capacity, List <Mechanics> mechanicsList) {
+        super(brand, model, engineVolume, driver, mechanicsList);
         this.capacity = capacity;
+
     }
 
     public Capacity getCapacity() {

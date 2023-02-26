@@ -73,7 +73,6 @@ public class Car extends Transport<DriverCategoryB> {
         System.out.println("Максимальная скорость - " + getBrand() + " " + getModel());
     }
 
-
 }
 
 

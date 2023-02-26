@@ -72,6 +72,16 @@ public abstract class Transport <T extends Driver> implements Competing {
     public void setMechanic(List<Mechanics> mechanic) {
         this.mechanic = mechanic;
     }
+
+    @Override
+    public String toString() {
+        return "Марка: " + brand + "; " +
+                "Модель: " + model + "; " +
+                "Объем двигателя: " + engineVolume + "; " +
+                 driver +
+                 mechanic;
+    }
+
 }
 
 //

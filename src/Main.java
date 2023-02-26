@@ -1,8 +1,6 @@
 import transport.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 
 //Задание 1
@@ -49,6 +47,32 @@ public class Main {
 
                 List<Transport> list = new ArrayList<>();
                 List.of(car1, car2, car3, car4,bus1, bus2, bus3, bus4, lorry1, lorry2, lorry3, lorry4);
+
+                Queue<Transport> queue = new LinkedList<>();
+                queue.offer(car1);
+                queue.offer(car2);
+                queue.offer(car3);
+                queue.offer(car4);
+                queue.offer(lorry1);
+                queue.offer(lorry2);
+                queue.offer(lorry3);
+                queue.offer(lorry4);
+
+                Transport auto;
+                while ((auto = (queue.poll())) != null) {
+                        System.out.println(auto);
+                }
+
+                ServiceStation serviceStation = new ServiceStation();
+                serviceStation.addAuto(car1);
+                serviceStation.addAuto(bus2);
+
+
+                serviceStation.carryOutTechnicalInspection(lorry3);
+                serviceStation.carryOutTechnicalInspection(bus3);
+
+
+
 
 
 

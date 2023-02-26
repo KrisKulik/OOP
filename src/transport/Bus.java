@@ -77,6 +77,7 @@ public class Bus extends Transport<DriverCategoryD>{
     public void maxSpeed() {
         System.out.println("Максимальная скорость - " + getBrand() + " " + getModel());
     }
+
 }
 
 

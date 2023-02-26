@@ -69,4 +69,6 @@ public class Lorry extends Transport<DriverCategoryC> {
     public void maxSpeed() {
         System.out.println("Максимальная скорость - " + getBrand() + " " + getModel());
     }
+
+
 }

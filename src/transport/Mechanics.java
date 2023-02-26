@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.List;
+
 public class Mechanics {
     private String name;
     private String company;

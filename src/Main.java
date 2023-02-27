@@ -82,8 +82,9 @@ public class Main {
                 map.put(car4, List.of(mechanic1, mechanic2,mechanic4));
 
                 for (Map.Entry m : map.entrySet()) {
+                        System.out.println(map.keySet() + " " + map.values());
                 }
-                System.out.println(map.keySet() + " " + map.values());
+
 
 
 

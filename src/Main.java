@@ -67,13 +67,7 @@ public class Main {
                 serviceStation.addAuto(car1);
                 serviceStation.addAuto(bus2);
 
-
-                serviceStation.carryOutTechnicalInspection(lorry3);
-                serviceStation.carryOutTechnicalInspection(bus3);
-
-
-
-
+                serviceStation.carryOutTechnicalInspection();
 
 
 

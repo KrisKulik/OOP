@@ -51,6 +51,6 @@ public class Driver {
 
     @Override
     public String toString() {
-        return  "Ф.И.О.: " + name;
+        return  "Ф.И.О. водителя: " + name + " ";
     }
 }

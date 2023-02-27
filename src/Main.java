@@ -81,8 +81,8 @@ public class Main {
                 map.put(car3, List.of(mechanic1, mechanic3));
                 map.put(car4, List.of(mechanic1, mechanic2,mechanic4));
 
-                for (Map.Entry m : map.entrySet()) {
-                        System.out.println(map.keySet() + " " + map.values());
+                for (Map.Entry <Car, List<Mechanics>> m : map.entrySet()) {
+                        System.out.println(m);
                 }
 
 

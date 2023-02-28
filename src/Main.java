@@ -1,6 +1,7 @@
 import transport.*;
 
 import java.util.*;
+import java.util.Map;
 
 
 //Задание 1
@@ -19,34 +20,36 @@ public class Main {
                 Mechanics mechanic1 = new Mechanics("Винтик", "Hamann");
                 Mechanics mechanic2 = new Mechanics("Шпунтик", "Brabus");
                 Mechanics mechanic3 = new Mechanics("Гайка", "General Motors");
+                Mechanics mechanic4 = new Mechanics("Рэйкс", "Abt Sportsline");
 
-                List <Mechanics> mechanicsList = new ArrayList<>();
+                List<Mechanics> mechanicsList = new ArrayList<>();
                 mechanicsList.add(mechanic1);
                 mechanicsList.add(mechanic2);
                 mechanicsList.add(mechanic3);
+                mechanicsList.add(mechanic4);
 
                 DriverCategoryB driverB = new DriverCategoryB("Mickey Mouse", true, 5);
                 DriverCategoryC driverC = new DriverCategoryC("Donald Fauntleroy Duck", true, 10);
                 DriverCategoryD driverD = new DriverCategoryD("Pluto", true, 1);
 
 
-                Car car1 = new Car("ВАЗ", "2101", 1.6, driverB, BodyCar.SEDAN, mechanicsList);
-                Car car2 = new Car("ВАЗ", "2102", 1.6, driverB, BodyCar.HATCHBACK, mechanicsList);
-                Car car3 = new Car("ВАЗ", "2103", 1.6, driverB, BodyCar.SEDAN, mechanicsList);
-                Car car4 = new Car("ВАЗ", "2104", 1.6, driverB, BodyCar.HATCHBACK, mechanicsList);
+                Car car1 = new Car("ВАЗ", "2101", 1.6, driverB, BodyCar.SEDAN, List.of(mechanic1, mechanic2));
+                Car car2 = new Car("ВАЗ", "2102", 1.6, driverB, BodyCar.HATCHBACK, List.of(mechanic2, mechanic3, mechanic4));
+                Car car3 = new Car("ВАЗ", "2103", 1.6, driverB, BodyCar.SEDAN, List.of(mechanic1, mechanic3));
+                Car car4 = new Car("ВАЗ", "2104", 1.6, driverB, BodyCar.HATCHBACK, List.of(mechanic1, mechanic2,mechanic4));
 
-                Bus bus1 = new Bus("ПАЗ", "3201", 4.0, driverD, Capacity.SMALL, mechanicsList);
-                Bus bus2 = new Bus("ПАЗ", "3202", 4.0, driverD, Capacity.SMALL, mechanicsList);
-                Bus bus3 = new Bus("ПАЗ", "3203", 4.0, driverD, Capacity.MEDIUM, mechanicsList);
-                Bus bus4 = new Bus("ПАЗ", "3204", 4.0, driverD, Capacity.MEDIUM, mechanicsList);
+                Bus bus1 = new Bus("ПАЗ", "3201", 4.0, driverD, Capacity.SMALL, List.of(mechanic1, mechanic2));
+                Bus bus2 = new Bus("ПАЗ", "3202", 4.0, driverD, Capacity.SMALL, List.of(mechanic2, mechanic3, mechanic4));
+                Bus bus3 = new Bus("ПАЗ", "3203", 4.0, driverD, Capacity.MEDIUM, List.of(mechanic1, mechanic3));
+                Bus bus4 = new Bus("ПАЗ", "3204", 4.0, driverD, Capacity.MEDIUM, List.of(mechanic1, mechanic2,mechanic4));
 
-                Lorry lorry1 = new Lorry("КамАЗ", "4308", 5.9, driverC, LoadCapacity.N2, mechanicsList);
-                Lorry lorry2 = new Lorry("КамАЗ", "4310", 5.9, driverC, LoadCapacity.N2, mechanicsList);
-                Lorry lorry3 = new Lorry("КамАЗ", "4325", 5.9, driverC, LoadCapacity.N2, mechanicsList);
-                Lorry lorry4 = new Lorry("КамАЗ", "4350", 5.9, driverC, LoadCapacity.N2, mechanicsList);
+                Lorry lorry1 = new Lorry("КамАЗ", "4308", 5.9, driverC, LoadCapacity.N2, List.of(mechanic1, mechanic2));
+                Lorry lorry2 = new Lorry("КамАЗ", "4310", 5.9, driverC, LoadCapacity.N2, List.of(mechanic2, mechanic3, mechanic4));
+                Lorry lorry3 = new Lorry("КамАЗ", "4325", 5.9, driverC, LoadCapacity.N2, List.of(mechanic1, mechanic3));
+                Lorry lorry4 = new Lorry("КамАЗ", "4350", 5.9, driverC, LoadCapacity.N2, List.of(mechanic1, mechanic2,mechanic4));
 
                 List<Transport> list = new ArrayList<>();
-                List.of(car1, car2, car3, car4,bus1, bus2, bus3, bus4, lorry1, lorry2, lorry3, lorry4);
+                List.of(car1, car2, car3, car4, bus1, bus2, bus3, bus4, lorry1, lorry2, lorry3, lorry4);
 
                 Queue<Transport> queue = new LinkedList<>();
                 queue.offer(car1);
@@ -69,6 +72,20 @@ public class Main {
 
                 serviceStation.carryOutTechnicalInspection(lorry1);
                 serviceStation.carryOutTechnicalInspection(bus1);
+
+
+                System.out.println(" ");
+                Map <Car, List<Mechanics>> map = new HashMap<>();
+
+                map.put(car1, List.of(mechanic1, mechanic2));
+                map.put(car2, List.of(mechanic2, mechanic3, mechanic4));
+                map.put(car3, List.of(mechanic1, mechanic3));
+                map.put(car4, List.of(mechanic1, mechanic2,mechanic4));
+
+                for (Map.Entry <Car, List<Mechanics>> m : map.entrySet()) {
+                        System.out.println(m);
+                }
+
 
 
 

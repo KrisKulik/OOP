@@ -6,6 +6,7 @@ import java.util.Queue;
 
 public class ServiceStation {
    private Queue<Transport<?>> queue = new LinkedList<>();
+   private Transport transport;
 
    public ServiceStation(Queue<Transport<?>> queue) {
       this.queue = queue;
@@ -22,9 +23,13 @@ public class ServiceStation {
       queue.add(auto);
    }
 
-   public void carryOutTechnicalInspection() {
-      System.out.println(queue.poll() + " прошел технический осмотр");
+   public void carryOutTechnicalInspection(Transport<?>auto) throws TransportTypeException {
+      if (auto.passDiagnostic()) {
+         System.out.println("Пройти диагностику ");
+      }
+      queue.poll();
    }
+
 }
 
 

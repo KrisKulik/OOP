@@ -50,9 +50,9 @@ public class Main {
 
                 Queue<Transport> queue = new LinkedList<>();
                 queue.offer(car1);
-                queue.offer(car2);
+                queue.offer(bus1);
                 queue.offer(car3);
-                queue.offer(car4);
+                queue.offer(bus2);
                 queue.offer(lorry1);
                 queue.offer(lorry2);
                 queue.offer(lorry3);
@@ -64,10 +64,11 @@ public class Main {
                 }
 
                 ServiceStation serviceStation = new ServiceStation();
-                serviceStation.addAuto(car1);
-                serviceStation.addAuto(bus2);
+                serviceStation.addAuto(bus1);
+                serviceStation.addAuto(lorry1);
 
-                serviceStation.carryOutTechnicalInspection();
+                serviceStation.carryOutTechnicalInspection(lorry1);
+                serviceStation.carryOutTechnicalInspection(bus1);
 
 
 

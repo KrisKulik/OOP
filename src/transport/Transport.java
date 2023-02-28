@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport <T extends Driver> implements Competing {
-    private final String brand;
-    private final String model;
+    private  String brand;
+    private  String model;
     private double engineVolume;
     private T driver;
     private List<Mechanics> mechanic;
@@ -31,6 +31,9 @@ public abstract class Transport <T extends Driver> implements Competing {
          setDriver(driver);
          this.mechanic = mechanic;
      }
+
+    protected Transport() {
+    }
 
     public void start(){
 }

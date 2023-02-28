@@ -13,13 +13,15 @@ package transport;
 //«Фургон»,
 //«Минивэн».
 
+import java.util.List;
+
 public class Car extends Transport<DriverCategoryB> {
 
     private BodyCar bodyCar;
 
 
-    public Car(String brand, String model, double engineVolume, DriverCategoryB driver, BodyCar bodyCar) {
-        super(brand, model, engineVolume, driver);
+    public Car(String brand, String model, double engineVolume, DriverCategoryB driver, BodyCar bodyCar, List <Mechanics> mechanicsList) {
+        super(brand, model, engineVolume, driver, mechanicsList);
         this.bodyCar = bodyCar;
     }
 
@@ -70,6 +72,7 @@ public class Car extends Transport<DriverCategoryB> {
     public void maxSpeed() {
         System.out.println("Максимальная скорость - " + getBrand() + " " + getModel());
     }
+
 }
 
 

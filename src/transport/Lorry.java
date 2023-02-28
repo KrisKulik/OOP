@@ -1,12 +1,15 @@
 package transport;
+
+import java.util.List;
+
 //Для грузовых автомобилей добавьте перечисления по типу грузоподъемности:
 //N1 (с полной массой до 3,5 тонн);
 //N2 (с полной массой свыше 3,5 до 12 тонн);
 //N3 (с полной массой свыше 12 тонн).
 public class Lorry extends Transport<DriverCategoryC> {
     private LoadCapacity loadCapacity;
-    public Lorry(String brand, String model, double engineVolume, DriverCategoryC driver, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume, driver);
+    public Lorry(String brand, String model, double engineVolume, DriverCategoryC driver, LoadCapacity loadCapacity, List<Mechanics> mechanicsList) {
+        super(brand, model, engineVolume, driver, mechanicsList);
         this.loadCapacity=loadCapacity;
     }
     public LoadCapacity getLoadCapacity() {
@@ -66,4 +69,6 @@ public class Lorry extends Transport<DriverCategoryC> {
     public void maxSpeed() {
         System.out.println("Максимальная скорость - " + getBrand() + " " + getModel());
     }
+
+
 }

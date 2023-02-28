@@ -85,6 +85,31 @@ public class Main {
                         System.out.println(m);
                 }
 
+                System.out.println(" ");
+//Создайте множество (в реализации HashSet), состоящее из водителей, таким образом,
+// чтобы, в случае добавления одного и того же водителя в базу данных два раза, в консоль информация выводилась без повторов.
+                Set <Driver> drivers = new HashSet<>();
+                drivers.add(driverB);
+                drivers.add(driverC);
+                drivers.add(driverB);
+                drivers.add(driverD);
+                drivers.add(driverC);
+                System.out.println(drivers);
+
+//Затем выведите всех водителей в консоль с помощью итератора.
+
+                List <Driver> driverList = new ArrayList<>();
+
+                driverList.add(driverB);
+                driverList.add(driverC);
+                driverList.add(driverD);
+
+                Iterator<Driver> driverIterator = driverList.iterator();
+
+                while(driverIterator.hasNext()) {
+                        System.out.println(driverIterator.next());
+                }
+
 
 
 

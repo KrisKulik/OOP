@@ -50,7 +50,7 @@ public class Car extends Transport<DriverCategoryB> {
     @Override
     public String toString() {
         return super.toString() + "; " +
-                "Тип кузова: " + bodyCar;
+                "Тип кузова: " + bodyCar + "; ";
     }
 
     @Override

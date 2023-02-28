@@ -53,4 +53,13 @@ public class Driver {
     public String toString() {
         return  "Ф.И.О. водителя: " + name + " ";
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

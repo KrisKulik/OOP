@@ -2,19 +2,8 @@ import transport.*;
 
 import java.util.*;
 import java.util.Map;
-
-
-//Задание 1
-//В приложении для автогонок создайте список всех участвующих автомобилей.
-// В гонках участвуют объекты всех классов: «Легковые автомобили», «Грузовые автомобили» и «Автобусы».
-//Каждый автомобиль проходит техобслуживание. Список механиков должен присутствовать в конструкторе автомобиля.
-//Создайте новый класс «механик» с параметрами: имя и фамилия; компания, в которой он работает.
-//Класс «механик» должен иметь набор методов: «провести техобслуживание»,«починить машину».
-//Один механик может работать с несколькими машинами.
-//Каждый метод нужно создать и вывести по нему информацию в консоль.
-//Создайте в классе Transport список механиков.
-//Напишите программу, с помощью которой можно узнать: как зовут водителя авто; какие механики есть у автомобиля.
 public class Main {
+
         public static void main(String[] args) throws TransportTypeException {
 
                 Mechanics mechanic1 = new Mechanics("Винтик", "Hamann");
@@ -97,14 +86,7 @@ public class Main {
                 System.out.println(drivers);
 
 //Затем выведите всех водителей в консоль с помощью итератора.
-
-                List <Driver> driverList = new ArrayList<>();
-
-                driverList.add(driverB);
-                driverList.add(driverC);
-                driverList.add(driverD);
-
-                Iterator<Driver> driverIterator = driverList.iterator();
+                Iterator<Driver> driverIterator = drivers.iterator();
 
                 while(driverIterator.hasNext()) {
                         System.out.println(driverIterator.next());

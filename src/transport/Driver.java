@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.Objects;
+
 public class Driver {
     private String name;
     private boolean driverLicense;
@@ -52,5 +54,18 @@ public class Driver {
     @Override
     public String toString() {
         return  "Ф.И.О. водителя: " + name + " ";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Driver)) return false;
+        Driver driver = (Driver) o;
+        return Objects.equals(name, driver.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

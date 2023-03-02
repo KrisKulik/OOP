@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.Objects;
+
 public class Driver {
     private String name;
     private boolean driverLicense;
@@ -55,11 +57,15 @@ public class Driver {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Driver)) return false;
+        Driver driver = (Driver) o;
+        return Objects.equals(name, driver.name);
     }
+
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

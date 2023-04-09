@@ -2,19 +2,8 @@ import transport.*;
 
 import java.util.*;
 import java.util.Map;
-
-
-//Задание 1
-//В приложении для автогонок создайте список всех участвующих автомобилей.
-// В гонках участвуют объекты всех классов: «Легковые автомобили», «Грузовые автомобили» и «Автобусы».
-//Каждый автомобиль проходит техобслуживание. Список механиков должен присутствовать в конструкторе автомобиля.
-//Создайте новый класс «механик» с параметрами: имя и фамилия; компания, в которой он работает.
-//Класс «механик» должен иметь набор методов: «провести техобслуживание»,«починить машину».
-//Один механик может работать с несколькими машинами.
-//Каждый метод нужно создать и вывести по нему информацию в консоль.
-//Создайте в классе Transport список механиков.
-//Напишите программу, с помощью которой можно узнать: как зовут водителя авто; какие механики есть у автомобиля.
 public class Main {
+
         public static void main(String[] args) throws TransportTypeException {
 
                 Mechanics mechanic1 = new Mechanics("Винтик", "Hamann");
@@ -85,6 +74,25 @@ public class Main {
                 for (Map.Entry <Car, List<Mechanics>> m : map.entrySet()) {
                         System.out.println(m);
                 }
+
+                System.out.println(" ");
+//Создайте множество (в реализации HashSet), состоящее из водителей, таким образом,
+// чтобы, в случае добавления одного и того же водителя в базу данных два раза, в консоль информация выводилась без повторов.
+                Set <Driver> drivers = new HashSet<>();
+                drivers.add(driverB);
+                drivers.add(driverC);
+                drivers.add(driverB);
+                drivers.add(driverD);
+                drivers.add(driverC);
+                System.out.println(drivers);
+
+//Затем выведите всех водителей в консоль с помощью итератора.
+                Iterator<Driver> driverIterator = drivers.iterator();
+
+                while(driverIterator.hasNext()) {
+                        System.out.println(driverIterator.next());
+                }
+
 
 
 
